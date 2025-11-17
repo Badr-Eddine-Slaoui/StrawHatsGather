@@ -83,3 +83,22 @@ export const validate_email = (email, id) => {
         }
     }
 }
+
+export const validate_phone = (phone, id) => {
+    let phone_err = document.getElementById(id);
+    let phone_regex = /^[0-9]{10}$/;
+    if (!phone) {
+        phone_err.classList.remove("hidden");
+        phone_err.textContent = "Phone is required";
+        return false;
+    } else {
+        if(!phone_regex.test(phone)) {
+            phone_err.classList.remove("hidden");
+            phone_err.textContent = "Phone is not valid";
+            return false;
+        } else {
+            phone_err.classList.add("hidden");
+            return true;
+        }
+    }
+}
