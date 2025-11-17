@@ -346,7 +346,7 @@ add_worker_form.addEventListener("submit", (e) => {
     if (!validate_email(email, "email_err")) return;
     if (!validate_phone(phone, "phone_err")) return;
     if (!validate_enter_date(enter_date, "enter_date_err")) return;
-    if (!validate_leave_date(leave_date, "leave_date_err")) return;
+    if (!validate_leave_date(enter_date, leave_date, "leave_date_err")) return;
 
     if(!photo) {
         create_worker("https://cdn-icons-png.flaticon.com/512/149/149071.png");
@@ -449,7 +449,7 @@ const edit_worker = (e, id) => {
 
     if (!validate_enter_date(enter_date, "worker_enter_date_err")) return;
 
-    if (!validate_leave_date(leave_date, "worker_leave_date_err")) return;
+    if (!validate_leave_date(enter_date, leave_date, "worker_leave_date_err")) return;
 
     if(!photo) {
         update_worker("https://cdn-icons-png.flaticon.com/512/149/149071.png");

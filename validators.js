@@ -122,7 +122,7 @@ export const validate_enter_date = (enter_date, id) => {
     }
 }
 
-export const validate_leave_date = (leave_date, id) => {
+export const validate_leave_date = (enter_date, leave_date, id) => {
     let leave_date_err = document.getElementById(id);
     if (!leave_date) {
         leave_date_err.classList.remove("hidden");
@@ -131,6 +131,7 @@ export const validate_leave_date = (leave_date, id) => {
     } else {
         let enter_date_obj = new Date(enter_date);
         let leave_date_obj = new Date(leave_date);
+        
         if(leave_date_obj < enter_date_obj) {
             leave_date_err.classList.remove("hidden");
             leave_date_err.textContent = "Leave Date must be after Enter Date";
