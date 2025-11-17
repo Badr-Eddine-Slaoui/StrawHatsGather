@@ -46,3 +46,21 @@ export const validate_age = (age, id) => {
         }
     }
 }
+
+export const validate_role = (role, id) => {
+    let role_err = document.getElementById(id);
+    if (!role) {
+        role_err.classList.remove("hidden");
+        role_err.textContent = "Role is required";
+        return false;
+    } else {
+        if(!available_roles.includes(role)) {
+            role_err.classList.remove("hidden");
+            role_err.textContent = "Role is not available";
+            return false;
+        } else {
+            role_err.classList.add("hidden");
+            return true;
+        }
+    }
+}
