@@ -16,3 +16,4 @@ export let close_add_worker_modal = add_worker_modal.querySelector("#close-modal
 export let add_worker_form = document.getElementById("add-worker-form");
 export let add_experience_btn = document.getElementById("add-experience-btn");
 export let experiences = document.getElementById("experiences");
+export let img = document.querySelector("#add-worker-modal #photo");

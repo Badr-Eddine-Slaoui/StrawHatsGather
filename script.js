@@ -1,4 +1,4 @@
-import { add_experience_btn, add_worker_btn, add_worker_form, add_worker_modal, close_add_worker_modal, experiences, no_worker_in_list } from "./globalVariables.js";
+import { add_experience_btn, add_worker_btn, add_worker_form, add_worker_modal, close_add_worker_modal, experiences, img, no_worker_in_list } from "./globalVariables.js";
 import { add_experience, add_worker_to_list } from "./helpers.js";
 import { validate_age, validate_email, validate_enter_date, validate_experiences, validate_leave_date, validate_name, validate_phone, validate_role } from "./validators.js";
 
@@ -90,4 +90,18 @@ close_add_worker_modal.addEventListener("click", () => {
         error.classList.add("hidden");
         error.textContent = "";
     });
+});
+
+img.addEventListener("input", () => {
+    let preview = document.getElementById("img-preview");
+    preview.src = img.value;
+    preview.classList.remove("hidden");
+    if (img.value === "") {
+        preview.classList.add("hidden");
+        return;
+    }
+
+    preview.onerror = () => {
+        preview.src = "https://cdn-icons-png.flaticon.com/512/149/149071.png";
+    }
 });
