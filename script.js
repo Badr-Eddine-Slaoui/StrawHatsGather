@@ -1,4 +1,4 @@
-import { add_experience_btn, add_worker_btn, add_worker_form, add_worker_modal, experiences, no_worker_in_list } from "./globalVariables.js";
+import { add_experience_btn, add_worker_btn, add_worker_form, add_worker_modal, close_add_worker_modal, experiences, no_worker_in_list } from "./globalVariables.js";
 import { add_experience, add_worker_to_list } from "./helpers.js";
 import { validate_age, validate_email, validate_enter_date, validate_experiences, validate_leave_date, validate_name, validate_phone, validate_role } from "./validators.js";
 
@@ -71,4 +71,23 @@ add_worker_form.addEventListener("submit", (e) => {
             no_worker_in_list.classList.add("hidden");
         }
     }
+});
+
+close_add_worker_modal.addEventListener("click", () => {
+    add_worker_modal.classList.remove("flex");
+    add_worker_modal.classList.add("hidden");
+    let preview = document.getElementById("img-preview");
+    preview.src = "";
+    preview.classList.add("hidden");
+    add_worker_form.reset();
+    experiences.classList.remove("flex");
+    experiences.classList.add("hidden");
+    document.querySelectorAll(".experience").forEach((experience) => {
+        experience.remove();
+    });
+    const allErrors = document.querySelectorAll('p[id$="_err"]');
+    allErrors.forEach((error) => {
+        error.classList.add("hidden");
+        error.textContent = "";
+    });
 });
