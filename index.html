@@ -48,6 +48,71 @@
             </div>
         </div>
     </div>
+    <div class="w-screen h-screen bg-black absolute top-0 left-0 bg-opacity-60 justify-center items-center hidden" id="add-worker-modal">
+        <div class="w-1/2 h-[90vh] bg-white rounded-lg relative">
+            <div id="close-modal" class="absolute top-1 right-1 rounded-lg w-[5vh] h-[5vh] bg-red-500 text-white flex justify-center items-center font-extrabold text-[1.5rem] cursor-pointer">x</div>
+            <h1 class="text-[3rem] my-10 font-extrabold text-orange-400 text-center">Add Worker</h1>
+            <form id="add-worker-form" class="w-full h-[70vh] flex items-center flex-col gap-5 overflow-y-scroll">
+                <div class="w-[90%] flex flex-col gap-y-2">
+                    <label for="name" class="text-[1.2rem] font-bold text-slate-500">Name:</label>
+                    <input type="text" name="name" id="name" class="border border-slate-500 rounded-md p-2">
+                    <p id="name_err" class="text-red-500 text-[1rem] hidden"></p>
+                </div>
+                <div class="w-[90%] flex flex-col gap-y-2">
+                    <label for="age" class="text-[1.2rem] font-bold text-slate-500">Age:</label>
+                    <input type="text" name="age" id="age" class="border border-slate-500 rounded-md p-2">
+                    <p id="age_err" class="text-red-500 text-[1rem] hidden"></p>
+                </div>
+                <div class="w-[90%] flex flex-col gap-y-2">
+                    <label for="role" class="text-[1.2rem] font-bold text-slate-500">Role:</label>
+                    <select class="border border-slate-500 rounded-md p-2" name="role" id="role">
+                        <option value="">--Choose role--</option>
+                        <option value="receptionist">Receptionist</option>
+                        <option value="it">IT</option>
+                        <option value="security">Security guard</option>
+                        <option value="manager">Manager</option>
+                        <option value="cleaner">Cleaner</option>
+                        <option value="visiter">Visiter</option>
+                    </select>
+                    <p id="role_err" class="text-red-500 text-[1rem] hidden"></p>
+                </div>
+                <div class="w-[90%] flex flex-col gap-y-2">
+                    <label for="photo" class="text-[1.2rem] font-bold text-slate-500">Photo (URL):</label>
+                    <input type="text" name="photo" id="photo" class="border border-slate-500 rounded-md p-2">
+                </div>
+                <div class="w-[90%] flex justify-center items-center">
+                    <img id="img-preview" src="" alt="Preview" class="w-[20vh] h-[20vh] rounded-full hidden">
+                </div>
+                <div class="w-[90%] flex flex-col gap-y-2">
+                    <label for="email" class="text-[1.2rem] font-bold text-slate-500">Email:</label>
+                    <input type="email" name="email" id="email" class="border border-slate-500 rounded-md p-2">
+                    <p id="email_err" class="text-red-500 text-[1rem] hidden"></p>
+                </div>
+                <div class="w-[90%] flex flex-col gap-y-2">
+                    <label for="phone" class="text-[1.2rem] font-bold text-slate-500">Phone:</label>
+                    <input type="tel" name="phone" id="phone" class="border border-slate-500 rounded-md p-2">
+                    <p id="phone_err" class="text-red-500 text-[1rem] hidden"></p>
+                </div>
+                <div class="w-[90%] flex flex-col gap-y-2">
+                    <label for="enter_date" class="text-[1.2rem] font-bold text-slate-500">Enter Date:</label>
+                    <input type="datetime-local" name="enter_date" id="enter_date" class="border border-slate-500 rounded-md p-2">
+                    <p id="enter_date_err" class="text-red-500 text-[1rem] hidden"></p>
+                </div>
+                <div class="w-[90%] flex flex-col gap-y-2">
+                    <label for="leave_date" class="text-[1.2rem] font-bold text-slate-500">Leave Date:</label>
+                    <input type="datetime-local" name="leave_date" id="leave_date" class="border border-slate-500 rounded-md p-2">
+                    <p id="leave_date_err" class="text-red-500 text-[1rem] hidden"></p>
+                </div>
+                <div id="experiences" class="w-[90%] border-t border-slate-500 flex-col gap-y-5 hidden">
+                    <h2 class="text-[2rem] mt-10 mb-5 font-extrabold text-orange-400 text-center">Experiences</h2>
+                </div>
+                <div class="w-[90%] flex justify-between items-center">
+                    <button id="add-experience-btn" type="button" class="bg-orange-400 py-3 px-5 text-[1.2rem] text-white font-bold rounded-md">Add Experience</button>
+                    <button type="submit" class="bg-blue-400 py-3 px-5 text-[1.2rem] text-white font-bold rounded-md">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
 <script type="module" src="./script.js"></script>
 </html>
