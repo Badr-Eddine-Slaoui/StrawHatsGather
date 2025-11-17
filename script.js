@@ -1,4 +1,4 @@
-import { add_experience_btn, add_worker_btn, add_worker_form, add_worker_modal, available_rooms, close_add_worker_modal, experiences, img, room_btns, room_limits, no_worker_in_list, room_by_roles, worker_list, search, filter } from "./globalVariables.js";
+import { add_experience_btn, add_worker_btn, add_worker_form, add_worker_modal, available_rooms, close_add_worker_modal, experiences, img, room_btns, room_limits, no_worker_in_list, room_by_roles, worker_list, search, filter, randomize } from "./globalVariables.js";
 import { available_workers, delete_modal, experience_template, list_worker, profile, room_worker,update_modal } from "./templates.js";
 import { validate_age, validate_email, validate_enter_date, validate_experiences, validate_leave_date, validate_name, validate_phone, validate_role } from "./validators.js";
 
@@ -232,6 +232,52 @@ const filter_workers = (search = "", role = "") => {
         filtered_workers = filtered_workers.filter((worker) => worker.role === (role === "all" ? worker.role : role));
     }
     return filtered_workers;
+}
+
+const randomize_workers_in_rooms = () => {
+    worker_list_arr = [...worker_list_arr, ...available_rooms.map((r) => JSON.parse(localStorage.getItem(`${r.replace("-", "_")}_workers`) || "[]")).flat()];
+    localStorage.setItem("worker_list_arr", JSON.stringify(worker_list_arr));
+
+    update_worker_list(worker_list_arr);
+    
+    available_rooms.forEach(r => {
+        localStorage.setItem(`${r.replace("-", "_")}_workers`, "[]");
+        load_room_workers(r, room_limits[r]);
+    });
+
+    let skiped = [];
+
+    do {
+        let random_worker = worker_list_arr[Math.floor(Math.random() * worker_list_arr.length)];
+        let random_room = "";
+        let accessible_rooms = available_rooms.filter((r) => room_by_roles[r].includes(random_worker.role));
+
+        if (accessible_rooms.length === 0) {
+            let index = worker_list_arr.findIndex((w) => w.id === random_worker.id);
+            skiped.push(worker_list_arr[index]);
+            worker_list_arr.splice(index, 1);
+            continue;
+        }
+
+        let empty_rooms = accessible_rooms.filter((r) => JSON.parse(localStorage.getItem(`${r.replace("-", "_")}_workers`) || "[]").length < room_limits[r]);
+        
+        if (empty_rooms.length === 0) {
+            let index = worker_list_arr.findIndex((w) => w.id === random_worker.id);
+            skiped.push(worker_list_arr[index]);
+            worker_list_arr.splice(index, 1);
+            continue;
+        }
+
+        random_room = empty_rooms[Math.floor(Math.random() * empty_rooms.length)];
+       
+        add_worker_to_room(random_worker, random_room);
+
+    } while (worker_list_arr.length > 0);
+
+    worker_list_arr = [...worker_list_arr, ...skiped];
+    localStorage.setItem("worker_list_arr", JSON.stringify(worker_list_arr));
+
+    update_worker_list(worker_list_arr);
 }
 
 
@@ -470,3 +516,5 @@ search.addEventListener("input", () => {
 filter.addEventListener("change", () => {
     update_worker_list(filter_workers(search.value, filter.value));
 });
+
+randomize.addEventListener("click", randomize_workers_in_rooms);

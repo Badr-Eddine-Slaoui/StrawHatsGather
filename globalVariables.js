@@ -47,3 +47,4 @@ export let plan = document.getElementById("plan");
 export let room_btns = plan.querySelectorAll(".add-worker-btn");
 export let search = document.getElementById("search");
 export let filter = document.getElementById("filter");
+export let randomize = document.getElementById("randomize");
