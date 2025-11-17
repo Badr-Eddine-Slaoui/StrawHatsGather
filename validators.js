@@ -102,3 +102,43 @@ export const validate_phone = (phone, id) => {
         }
     }
 }
+
+export const validate_enter_date = (enter_date, id) => {
+    let enter_date_err = document.getElementById(id);
+    if (!enter_date) {
+        enter_date_err.classList.remove("hidden");
+        enter_date_err.textContent = "Enter Date is required";
+        return false;
+    } else {
+        let now = new Date();
+        let enter_date_obj = new Date(enter_date);
+        if(enter_date_obj < now) {
+            enter_date_err.classList.remove("hidden");
+            enter_date_err.textContent = "Enter Date must be in the future";
+            return false;
+        } else {
+            enter_date_err.classList.add("hidden");
+            return true;
+        }
+    }
+}
+
+export const validate_leave_date = (leave_date, id) => {
+    let leave_date_err = document.getElementById(id);
+    if (!leave_date) {
+        leave_date_err.classList.remove("hidden");
+        leave_date_err.textContent = "Leave Date is required";
+        return false;
+    } else {
+        let enter_date_obj = new Date(enter_date);
+        let leave_date_obj = new Date(leave_date);
+        if(leave_date_obj < enter_date_obj) {
+            leave_date_err.classList.remove("hidden");
+            leave_date_err.textContent = "Leave Date must be after Enter Date";
+            return false;
+        } else {
+            leave_date_err.classList.add("hidden");
+            return true;
+        }
+    }
+}
