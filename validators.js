@@ -2,7 +2,6 @@ import { available_roles } from "./globalVariables.js";
 
 export const validate_name = (name, id) => {
     let name_err = document.getElementById(id);
-    console.log(name_err);
     
     let name_regex = /^[a-zA-Z\s]{3,}$/;
     if (!name) {
