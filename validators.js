@@ -142,3 +142,97 @@ export const validate_leave_date = (leave_date, id) => {
         }
     }
 }
+
+export const validate_experiences = (class_name) => {
+    let experiences_arr = [];
+    let all_experiences_valid = true;
+    if (document.querySelectorAll(`.${class_name}`).length !== 0) {
+        let experiences = Array.from(document.querySelectorAll(`.${class_name}`));
+        experiences.map((experience, i) => {
+            let title = experience.querySelector(`#title-${i + 1}`).value;
+            let company = experience.querySelector(`#company-${i + 1}`).value;
+            let start_date = experience.querySelector(`#start-date-${i + 1}`).value;
+            let end_date = experience.querySelector(`#end-date-${i + 1}`).value;
+
+            let title_err = experience.querySelector(`#title_err_${i + 1}`);
+            let title_regex = /^[a-zA-Z0-9\s]{3,}$/;
+            if(!title) {
+                title_err.classList.remove("hidden");
+                title_err.textContent = "Title is required";
+                all_experiences_valid = false;
+                return { all_experiences_valid, experiences_arr };
+            } else {
+                if(!title_regex.test(title)) {
+                    title_err.classList.remove("hidden");
+                    title_err.textContent = "Title must contain just letters, numbers, spaces, and at least 3 characters";
+                    all_experiences_valid = false;
+                    return { all_experiences_valid, experiences_arr };
+                } else {
+                    title_err.classList.add("hidden");
+                }
+            }
+
+            let company_err = experience.querySelector(`#company_err_${i + 1}`);
+            let company_regex = /^[a-zA-Z0-9\s]{3,}$/;
+            if(!company) {
+                company_err.classList.remove("hidden");
+                company_err.textContent = "Company is required";
+                all_experiences_valid = false;
+                return { all_experiences_valid, experiences_arr };
+            } else {
+                if(!company_regex.test(company)) {
+                    company_err.classList.remove("hidden");
+                    company_err.textContent = "Company must contain just letters, numbers, spaces, and at least 3 characters";
+                    all_experiences_valid = false;
+                    return { all_experiences_valid, experiences_arr };
+                } else {
+                    company_err.classList.add("hidden");
+                }
+            }
+
+            let start_date_err = experience.querySelector(`#start_date_err_${i + 1}`);
+            if(!start_date) {
+                start_date_err.classList.remove("hidden");
+                start_date_err.textContent = "Start Date is required";
+                all_experiences_valid = false;
+                return { all_experiences_valid, experiences_arr };
+            } else {
+                let now = new Date();
+                let start_date_obj = new Date(start_date);
+                if(start_date_obj > now) {
+                    start_date_err.classList.remove("hidden");
+                    start_date_err.textContent = "Start Date must be in the past";
+                    all_experiences_valid = false;
+                    return { all_experiences_valid, experiences_arr };
+                } else {
+                    start_date_err.classList.add("hidden");
+                }
+            }
+
+            let end_date_err = experience.querySelector(`#end_date_err_${i + 1}`);
+            if(!end_date) {
+                end_date_err.classList.remove("hidden");
+                end_date_err.textContent = "End Date is required";
+                all_experiences_valid = false;
+                return { all_experiences_valid, experiences_arr };
+            } else {
+                let start_date_obj = new Date(start_date);
+                let end_date_obj = new Date(end_date);
+                if(end_date_obj < start_date_obj) {
+                    end_date_err.classList.remove("hidden");
+                    end_date_err.textContent = "End Date must be after Start Date";
+                    all_experiences_valid = false;
+                    return { all_experiences_valid, experiences_arr };
+                } else {
+                    end_date_err.classList.add("hidden");
+                }
+            }
+
+            let experience_obj = { title, company, start_date, end_date };
+            experiences_arr.push(experience_obj);
+            all_experiences_valid = true;
+        })
+    }
+
+    return { all_experiences_valid, experiences_arr };
+}
