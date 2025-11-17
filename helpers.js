@@ -143,3 +143,54 @@ export const room_btn_handler = (e) => {
     let workers = worker_list_arr.filter((worker) => room_by_roles[id].includes(worker.role));
     show_available_workers_list(workers, id);
 };
+
+export const add_worker_to_room = (worker, room) => {
+    let room_arr = JSON.parse(localStorage.getItem(`${room.replace("-", "_")}_workers`) || "[]");
+
+    let room_btns_container = document.querySelector(`.${room}-btns`);
+    let first_room_btn = room_btns_container.querySelector(".add-worker-btn");
+    let worker_div = document.createElement("div");
+    worker_div.setAttribute("draggable", "true");
+    worker_div.id = `worker-${worker.id}`;
+    worker_div.className = "w-[15vh] h-[5.5vh] flex justify-around p-1 items-center rounded-lg shadow-lg bg-white border border-orange-400 cursor-pointer relative";
+    worker_div.innerHTML = room_worker(worker);
+
+    let remove_worker = worker_div.querySelector(`#remove-worker-${worker.id}`);
+    remove_worker.addEventListener("click", (e) => {
+        e.stopPropagation();
+        room_btns_container.insertBefore(first_room_btn, worker_div);
+        worker_div.remove();
+        add_worker_to_list(worker);
+        let room_arr = JSON.parse(localStorage.getItem(`${room.replace("-", "_")}_workers`) || "[]");
+        room_arr = room_arr.filter((w) => w.id !== worker.id);
+        localStorage.setItem(`${room.replace("-", "_")}_workers`, JSON.stringify(room_arr));
+        if (worker_list_arr.length === 0) {
+            no_worker_in_list.classList.add("hidden");
+        }
+        worker_list_arr.push(worker);
+        localStorage.setItem("worker_list_arr", JSON.stringify(worker_list_arr));
+    });
+
+    worker_div.addEventListener("click", () => {
+        show_worker_profile(worker);
+    });
+
+    room_btns_container.insertBefore(worker_div, first_room_btn);
+    first_room_btn.remove();
+    let worker_in_list = worker_list.querySelector(`#worker-${worker.id}`);
+    worker_in_list.remove();
+
+    if (worker_list_arr.length === 0) {
+        no_worker_in_list.classList.add("hidden");
+    }
+
+    worker_list_arr = worker_list_arr.filter((w) => w.id !== worker.id);
+    localStorage.setItem("worker_list_arr", JSON.stringify(worker_list_arr));
+
+    if (worker_list_arr.length === 0) {
+        no_worker_in_list.classList.remove("hidden");
+    }
+
+    room_arr.push(worker);
+    localStorage.setItem(`${room.replace("-", "_")}_workers`, JSON.stringify(room_arr));
+};
