@@ -157,7 +157,7 @@ const switch_worker_with_btn = (worker, room, container, btn) => {
     let worker_div = document.createElement("div");
     worker_div.setAttribute("draggable", "true");
     worker_div.id = `worker-${worker.id}`;
-    worker_div.className = "w-[15vh] h-[5.5vh] flex justify-around p-1 items-center rounded-lg shadow-lg bg-white border border-orange-400 cursor-pointer relative";
+    worker_div.className = "room-worker w-[15vh] h-[5.5vh] flex justify-around p-1 items-center rounded-lg shadow-lg bg-white border border-orange-400 cursor-pointer relative";
     worker_div.innerHTML = room_worker(worker);
 
     let remove_worker = worker_div.querySelector(`#remove-worker-${worker.id}`);
@@ -346,7 +346,7 @@ add_worker_form.addEventListener("submit", (e) => {
     if (!validate_email(email, "email_err")) return;
     if (!validate_phone(phone, "phone_err")) return;
     if (!validate_enter_date(enter_date, "enter_date_err")) return;
-    if (!validate_leave_date(leave_date, "leave_date_err")) return;
+    if (!validate_leave_date(enter_date, leave_date, "leave_date_err")) return;
 
     if(!photo) {
         create_worker("https://cdn-icons-png.flaticon.com/512/149/149071.png");
@@ -449,7 +449,7 @@ const edit_worker = (e, id) => {
 
     if (!validate_enter_date(enter_date, "worker_enter_date_err")) return;
 
-    if (!validate_leave_date(leave_date, "worker_leave_date_err")) return;
+    if (!validate_leave_date(enter_date, leave_date, "worker_leave_date_err")) return;
 
     if(!photo) {
         update_worker("https://cdn-icons-png.flaticon.com/512/149/149071.png");
