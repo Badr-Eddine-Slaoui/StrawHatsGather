@@ -5,6 +5,10 @@ module.exports = {
     extend: {
       backgroundImage: {
         'plan': "url('./images/plan.jpg')",
+      },
+      screens: {
+        "2xs": "375px",
+        "xs": "425px",
       }
     },
   },
