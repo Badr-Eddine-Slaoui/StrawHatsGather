@@ -36,7 +36,8 @@ const add_worker_to_list = (worker) => {
     let div = document.createElement("div");
     div.setAttribute("draggable", "true");
     div.id = `worker-${worker.id}`;
-    div.className = "worker w-10/12 mx-auto h-[9vh] flex gap-x-3 p-1 px-2 items-center rounded-lg shadow-lg bg-white border border-orange-400 cursor-pointer relative";
+    div.className =
+      "worker w-10/12 mx-auto h-[7vh] gap-x-2 p-3 px-3 rounded-[6px] sm:w-8/12 sm:h-[8vh] md:w-7/12 md:h-[9vh] lg:w-10/12 lg:h-[9vh] flex lg:gap-x-3 lg:p-1 lg:px-2 items-center lg:rounded-lg shadow-lg bg-white border border-orange-400 cursor-pointer relative";
     div.title = worker.role;
     div.innerHTML = list_worker(worker);
 
@@ -157,7 +158,7 @@ const switch_worker_with_btn = (worker, room, container, btn) => {
     let worker_div = document.createElement("div");
     worker_div.setAttribute("draggable", "true");
     worker_div.id = `worker-${worker.id}`;
-    worker_div.className = "room-worker w-[15vh] h-[5.5vh] flex justify-around p-1 items-center rounded-lg shadow-lg bg-white border border-orange-400 cursor-pointer relative";
+    worker_div.className = "room-worker w-[5vh] h-[2.5vh] rounded-[3px] sm:w-[7vh] sm:h-[3vh] xl:w-[15vh] xl:h-[5.5vh] flex justify-around xl:p-1 items-center xl:rounded-lg shadow-lg bg-white border border-orange-400 cursor-pointer relative";
     worker_div.innerHTML = room_worker(worker);
 
     let remove_worker = worker_div.querySelector(`#remove-worker-${worker.id}`);
@@ -223,7 +224,7 @@ const load_room_workers = (room, limit) => {
     for (let i = 0; i < limit; i++) {
 
         let room_btn = document.createElement("button")
-        room_btn.className = "add-worker-btn w-[5vh] h-[5vh] rounded-md shadow-lg flex justify-center items-center bg-blue-500 text-white font-extrabold text-[2rem]";
+        room_btn.className = "add-worker-btn w-[1.5vh] h-[1.5vh] rounded-[3px] text-[.6rem] sm:w-[2.5vh] sm:h-[2.5vh] sm:text-[.8rem] xl:w-[5vh] xl:h-[5vh] xl:rounded-md shadow-lg flex justify-center items-center bg-blue-500 text-white font-extrabold xl:text-[2rem]";
         room_btn.textContent = "+";
         room_btn.addEventListener("click", room_btn_handler);
         room_btns_container.appendChild(room_btn);
@@ -348,22 +349,6 @@ add_worker_form.addEventListener("submit", (e) => {
     if (!validate_enter_date(enter_date, "enter_date_err")) return;
     if (!validate_leave_date(enter_date, leave_date, "leave_date_err")) return;
 
-    if(!photo) {
-        create_worker("https://cdn-icons-png.flaticon.com/512/149/149071.png");
-    } else {
-        
-        const tempImg = new Image();
-        tempImg.src = photo;
-
-        tempImg.onerror = () => {
-            create_worker("https://cdn-icons-png.flaticon.com/512/149/149071.png");
-        }
-
-        tempImg.onload = () => {
-            create_worker(photo);
-        }
-    }
-
     const create_worker = (photo) => {
         let { all_experiences_valid, experiences_arr } = validate_experiences("experience");
     
@@ -384,6 +369,22 @@ add_worker_form.addEventListener("submit", (e) => {
             });
             add_worker_to_list(worker);
             no_worker_in_list.classList.add("hidden");
+        }
+    }
+
+    if(!photo) {
+        create_worker("https://cdn-icons-png.flaticon.com/512/149/149071.png");
+    } else {
+        
+        const tempImg = new Image();
+        tempImg.src = photo;
+
+        tempImg.onerror = () => {
+            create_worker("https://cdn-icons-png.flaticon.com/512/149/149071.png");
+        }
+
+        tempImg.onload = () => {
+            create_worker(photo);
         }
     }
 });
@@ -451,6 +452,20 @@ const edit_worker = (e, id) => {
 
     if (!validate_leave_date(enter_date, leave_date, "worker_leave_date_err")) return;
 
+    const update_worker = (photo) => {
+        let { all_experiences_valid, experiences_arr } = validate_experiences("worker-experience");
+
+        if (all_experiences_valid) {
+            let worker = { id, name, age, role, email, phone, enter_date, leave_date, photo, experiences_arr,};
+
+            let old_worker = worker_list_arr.findIndex((worker) => worker.id == id);
+            worker_list_arr.splice(old_worker, 1, worker);
+            localStorage.setItem("worker_list_arr", JSON.stringify(worker_list_arr));
+            update_worker_list();
+            document.getElementById("edit-worker-modal").remove();
+        }
+    }
+
     if(!photo) {
         update_worker("https://cdn-icons-png.flaticon.com/512/149/149071.png");
     } else {
@@ -464,20 +479,6 @@ const edit_worker = (e, id) => {
 
         tempImg.onload = () => {
             update_worker(photo);
-        }
-    }
-
-    const update_worker = (photo) => {
-        let { all_experiences_valid, experiences_arr } = validate_experiences("worker-experience");
-
-        if (all_experiences_valid) {
-            let worker = { id, name, age, role, email, phone, enter_date, leave_date, photo, experiences_arr,};
-
-            let old_worker = worker_list_arr.findIndex((worker) => worker.id == id);
-            worker_list_arr.splice(old_worker, 1, worker);
-            localStorage.setItem("worker_list_arr", JSON.stringify(worker_list_arr));
-            update_worker_list();
-            document.getElementById("edit-worker-modal").remove();
         }
     }
 }
