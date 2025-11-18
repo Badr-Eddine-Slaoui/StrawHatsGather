@@ -558,6 +558,18 @@ video {
   width: 100%;
 }
 
+@media (min-width: 375px) {
+  .container {
+    max-width: 375px;
+  }
+}
+
+@media (min-width: 425px) {
+  .container {
+    max-width: 425px;
+  }
+}
+
 @media (min-width: 640px) {
   .container {
     max-width: 640px;
@@ -659,8 +671,8 @@ video {
   inset: -0.25rem;
 }
 
-.bottom-1 {
-  bottom: 0.25rem;
+.bottom-\[2px\] {
+  bottom: 2px;
 }
 
 .end-1 {
@@ -675,6 +687,10 @@ video {
   right: 0.25rem;
 }
 
+.right-\[1px\] {
+  right: 1px;
+}
+
 .right-\[2px\] {
   right: 2px;
 }
@@ -685,6 +701,10 @@ video {
 
 .top-1 {
   top: 0.25rem;
+}
+
+.top-\[1px\] {
+  top: 1px;
 }
 
 .top-\[2px\] {
@@ -781,22 +801,9 @@ video {
   margin-bottom: 2.5rem;
 }
 
-.my-20 {
-  margin-top: 5rem;
-  margin-bottom: 5rem;
-}
-
 .my-5 {
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
-}
-
-.mb-5 {
-  margin-bottom: 1.25rem;
-}
-
-.mt-10 {
-  margin-top: 2.5rem;
 }
 
 .mt-2 {
@@ -902,40 +909,52 @@ video {
   display: none;
 }
 
+.h-\[1\.5vh\] {
+  height: 1.5vh;
+}
+
 .h-\[10vh\] {
   height: 10vh;
 }
 
-.h-\[15vh\] {
-  height: 15vh;
+.h-\[1vh\] {
+  height: 1vh;
+}
+
+.h-\[2\.5vh\] {
+  height: 2.5vh;
 }
 
 .h-\[20vh\] {
   height: 20vh;
 }
 
+.h-\[25vh\] {
+  height: 25vh;
+}
+
 .h-\[2vh\] {
   height: 2vh;
 }
 
-.h-\[3vh\] {
-  height: 3vh;
+.h-\[3\.5vh\] {
+  height: 3.5vh;
 }
 
-.h-\[5\.5vh\] {
-  height: 5.5vh;
-}
-
-.h-\[50vh\] {
-  height: 50vh;
+.h-\[30vh\] {
+  height: 30vh;
 }
 
 .h-\[5vh\] {
   height: 5vh;
 }
 
-.h-\[70vh\] {
-  height: 70vh;
+.h-\[65vh\] {
+  height: 65vh;
+}
+
+.h-\[7vh\] {
+  height: 7vh;
 }
 
 .h-\[80vh\] {
@@ -946,24 +965,8 @@ video {
   height: 8vh;
 }
 
-.h-\[90vh\] {
-  height: 90vh;
-}
-
-.h-\[9vh\] {
-  height: 9vh;
-}
-
 .h-screen {
   height: 100vh;
-}
-
-.w-1\/2 {
-  width: 50%;
-}
-
-.w-1\/3 {
-  width: 33.333333%;
 }
 
 .w-10\/12 {
@@ -974,20 +977,20 @@ video {
   width: 41.666667%;
 }
 
-.w-\[15vh\] {
-  width: 15vh;
+.w-\[1\.5vh\] {
+  width: 1.5vh;
 }
 
-.w-\[20\%\] {
-  width: 20%;
+.w-\[10vh\] {
+  width: 10vh;
+}
+
+.w-\[1vh\] {
+  width: 1vh;
 }
 
 .w-\[20vh\] {
   width: 20vh;
-}
-
-.w-\[25\%\] {
-  width: 25%;
 }
 
 .w-\[25vh\] {
@@ -998,6 +1001,10 @@ video {
   width: 2vh;
 }
 
+.w-\[30\%\] {
+  width: 30%;
+}
+
 .w-\[3vh\] {
   width: 3vh;
 }
@@ -1006,24 +1013,24 @@ video {
   width: 40%;
 }
 
+.w-\[4vh\] {
+  width: 4vh;
+}
+
 .w-\[5vh\] {
   width: 5vh;
 }
 
-.w-\[70\%\] {
-  width: 70%;
-}
-
-.w-\[80\%\] {
-  width: 80%;
-}
-
-.w-\[8vh\] {
-  width: 8vh;
+.w-\[60\%\] {
+  width: 60%;
 }
 
 .w-\[90\%\] {
   width: 90%;
+}
+
+.w-\[95\%\] {
+  width: 95%;
 }
 
 .w-\[this-is\\\\\] {
@@ -1588,8 +1595,8 @@ video {
   gap: 0.25rem;
 }
 
-.gap-10 {
-  gap: 2.5rem;
+.gap-4 {
+  gap: 1rem;
 }
 
 .gap-5 {
@@ -1604,11 +1611,6 @@ video {
 .gap-x-2 {
   -moz-column-gap: 0.5rem;
        column-gap: 0.5rem;
-}
-
-.gap-x-3 {
-  -moz-column-gap: 0.75rem;
-       column-gap: 0.75rem;
 }
 
 .gap-x-5 {
@@ -1942,6 +1944,22 @@ video {
 
 .rounded {
   border-radius: 0.25rem;
+}
+
+.rounded-\[2px\] {
+  border-radius: 2px;
+}
+
+.rounded-\[3px\] {
+  border-radius: 3px;
+}
+
+.rounded-\[4px\] {
+  border-radius: 4px;
+}
+
+.rounded-\[6px\] {
+  border-radius: 6px;
 }
 
 .rounded-full {
@@ -2278,6 +2296,14 @@ video {
   padding: 0.5rem;
 }
 
+.p-3 {
+  padding: 0.75rem;
+}
+
+.p-\[5px\] {
+  padding: 5px;
+}
+
 .px-1 {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
@@ -2293,19 +2319,24 @@ video {
   padding-right: 0.5rem;
 }
 
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
 .px-5 {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
 }
 
-.py-3 {
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
 }
 
-.py-4 {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .py-5 {
@@ -2315,10 +2346,6 @@ video {
 
 .pb-5 {
   padding-bottom: 1.25rem;
-}
-
-.pe-5 {
-  padding-inline-end: 1.25rem;
 }
 
 .text-left {
@@ -2377,12 +2404,20 @@ video {
   vertical-align: super;
 }
 
+.text-\[\.4rem\] {
+  font-size: .4rem;
+}
+
+.text-\[\.6rem\] {
+  font-size: .6rem;
+}
+
 .text-\[\.8rem\] {
   font-size: .8rem;
 }
 
-.text-\[0\.8rem\] {
-  font-size: 0.8rem;
+.text-\[0\.4rem\] {
+  font-size: 0.4rem;
 }
 
 .text-\[1\.2rem\] {
@@ -2395,14 +2430,6 @@ video {
 
 .text-\[1rem\] {
   font-size: 1rem;
-}
-
-.text-\[2rem\] {
-  font-size: 2rem;
-}
-
-.text-\[3rem\] {
-  font-size: 3rem;
 }
 
 .font-bold {
@@ -2882,9 +2909,567 @@ video {
   forced-color-adjust: none;
 }
 
+/* @media screen and (max-width: 425px) and (orientation: portrait) {
+
+    #container{
+        flex-direction: column-reverse;
+        overflow: hidden;
+        padding: 0;
+        column-gap: 0;
+        row-gap: 10px;
+    }
+
+    #worker-list{
+        width: 100%;
+    }
+
+    #plan{
+        margin-top: 20px;
+        width: 95%;
+        height: 45vh;
+        padding-block: 0;
+    }
+
+    .add-worker-btn{
+        width: 2vh;
+        height: 2vh;
+        font-size: 10px;
+        border-radius: 5px;
+    }
+
+    .rooms{
+        row-gap: 15px;
+        column-gap: 5px;
+    }
+
+    #add-worker-modal .modal,
+    #edit-worker-modal .modal,
+    #worker-profile-modal .modal,
+    #available-workers-list .modal{
+        width: 95%;
+        height: 90vh;
+    }
+
+    #delete-worker-modal .modal{
+        width: 95%;
+        height: 50vh;
+    }
+
+    #worker-profile-modal .modal .row{
+        flex-direction: column;
+        column-gap: 0;
+        row-gap: 8px;
+    }
+
+    #worker-profile-modal .modal img{
+        width: 10vh;
+        height: 10vh;
+    }
+
+    #worker-profile-modal .modal .name{
+        font-size: 1.2rem;
+    }
+
+    #worker-profile-modal .modal .age-role{
+        font-size: 1rem;
+    }
+
+    .room-worker{
+        width: 5vh;
+        height: 2vh;
+        border-radius: 2px;
+        padding: 1px;
+    }
+
+    .room-worker img{
+        width: 1vh;
+        height: 1vh;
+    }
+
+    .room-worker p{
+        font-size: .2rem;
+    }
+
+    .room-worker .remove-btn{
+        width: 1vh;
+        height: 1vh;
+        border-radius: 2px;
+        font-size: .5rem;
+    }
+}
+
+@media screen and (max-width: 800px) and (orientation: landscape) {
+
+    #container{
+        overflow: hidden;
+        padding: 0;
+    }
+
+    #worker-list{
+        width: 30%;
+    }
+
+    #worker-list h1{
+        font-size: 1.5rem;
+    }
+
+    #worker-list button{
+        font-size: .8rem;
+        padding-block: 8px;
+    }
+
+    #worker-list .worker{
+        height: 12vh;
+    }
+
+    #worker-list .worker img{
+        width: 6vh;
+        height: 6vh;
+    }
+
+    #worker-list .worker .name{
+        font-size: .8rem;
+    }
+
+    #worker-list .worker .role{
+        font-size: .6rem;
+    }
+
+    #worker-list .worker .close{
+        width: 3vh;
+        height: 3vh;
+        font-size: 10px;
+        border-radius: 5px;
+    }
+
+    #worker-list .worker .edit{
+        width: 7vh;
+        height: 3vh;
+        font-size: 8px;
+        border-radius: 3px;
+    }
+
+    #plan{
+        width: 65%;
+        height: 65vh;
+        padding-block: 0;
+    }
+
+    .add-worker-btn{
+        width: 4vh;
+        height: 4vh;
+        font-size: 16px;
+        border-radius: 5px;
+    }
+
+    .rooms{
+        row-gap: 15px;
+        column-gap: 5px;
+    }
+
+    #add-worker-modal .modal,
+    #edit-worker-modal .modal,
+    #worker-profile-modal .modal,
+    #available-workers-list .modal{
+        width: 95%;
+        height: 90vh;
+    }
+
+    #add-worker-form{
+        height: 50vh;
+    }
+
+    #delete-worker-modal .modal{
+        width: 95%;
+        height: 80vh;
+    }
+
+    #edit-worker-form{
+        height: 50vh;
+    }
+
+    #worker-profile-modal .modal .name{
+        font-size: 1.2rem;
+    }
+
+    #worker-profile-modal .modal .age-role{
+        font-size: 1rem;
+    }
+
+    .room-worker{
+        width: 12vh;
+        height: 4vh;
+        border-radius: 5px;
+        padding: 1px;
+    }
+
+    .room-worker img{
+        width: 2.5vh;
+        height: 2.5vh;
+    }
+
+    .room-worker p{
+        font-size: .5rem;
+    }
+
+    .room-worker .remove-btn{
+        width: 2vh;
+        height: 2vh;
+        border-radius: 2px;
+        font-size: .6rem;
+    }
+}
+
+@media screen and (min-width: 426px) and (max-width: 768px) and (orientation: portrait) {
+
+    #container{
+        flex-direction: column-reverse;
+        overflow: hidden;
+        padding: 0;
+        column-gap: 0;
+        row-gap: 10px;
+    }
+
+    #worker-list{
+        width: 100%;
+    }
+
+    #worker-list .worker{
+        height: 15vh;
+    }
+
+    #plan{
+        margin-top: 20px;
+        width: 75%;
+        height: 90vh;
+        padding-block: 0;
+    }
+
+    .add-worker-btn{
+        width: 2vh;
+        height: 2vh;
+        font-size: 10px;
+        border-radius: 5px;
+    }
+
+    .rooms{
+        gap: 20px;
+    }
+
+    #add-worker-modal .modal,
+    #edit-worker-modal .modal,
+    #worker-profile-modal .modal,
+    #available-workers-list .modal{
+        width: 95%;
+        height: 90vh;
+    }
+
+    #delete-worker-modal .modal{
+        width: 95%;
+        height: 50vh;
+    }
+
+    .room-worker{
+        width: 5vh;
+        height: 2vh;
+        border-radius: 2px;
+        padding: 1px;
+    }
+
+    .room-worker img{
+        width: 1vh;
+        height: 1vh;
+    }
+
+    .room-worker p{
+        font-size: .2rem;
+    }
+
+    .room-worker .remove-btn{
+        width: 1vh;
+        height: 1vh;
+        border-radius: 2px;
+        font-size: .5rem;
+    }
+}
+
+@media screen and (min-height: 768px) and (max-height: 1024px) and (orientation: landscape) {
+
+    #container{
+        overflow: hidden;
+        padding: 0;
+    }
+
+    #worker-list{
+        width: 30%;
+    }
+
+    #worker-list h1{
+        font-size: 1.5rem;
+    }
+
+    #worker-list button{
+        font-size: .8rem;
+        padding-block: 8px;
+    }
+
+    #worker-list .worker{
+        height: 12vh;
+    }
+
+    #worker-list .worker img{
+        width: 6vh;
+        height: 6vh;
+    }
+
+    #worker-list .worker .name{
+        font-size: .8rem;
+    }
+
+    #worker-list .worker .role{
+        font-size: .6rem;
+    }
+
+    #worker-list .worker .close{
+        top: 2px;
+        right: 2px;
+        width: 2vh;
+        height: 2vh;
+        font-size: 10px;
+        border-radius: 5px;
+    }
+
+    #worker-list .worker .edit{
+        width: 5vh;
+        height: 2vh;
+        font-size: 8px;
+        border-radius: 3px;
+    }
+
+    #plan{
+        width: 65%;
+        height: 40vh;
+        padding-block: 0;
+        transform: rotate(90deg) scaleX(1.3) scaleY(1.6);
+    }
+
+    .add-worker-btn{
+        width: 2vh;
+        height: 1.5vh;
+        font-size: 10px;
+        border-radius: 3px;
+    }
+
+    .rooms{
+        row-gap: 15px;
+        column-gap: 5px;
+    }
+
+    #add-worker-modal .modal,
+    #worker-profile-modal .modal,
+    #available-workers-list .modal,
+    #edit-worker-modal .modal{
+        width: 95%;
+        height: 90vh;
+    }
+
+    #add-worker-form{
+        height: 65vh;
+    }
+
+    #delete-worker-modal .modal{
+        width: 95%;
+        height: 70vh;
+    }
+
+    #edit-worker-form{
+        height: 65vh;
+    }
+
+    #worker-profile-modal .modal .name{
+        font-size: 1.2rem;
+    }
+
+    #worker-profile-modal .modal .age-role{
+        font-size: 1rem;
+    }
+
+    .room-worker{
+        width: 8vh;
+        height: 3vh;
+        border-radius: 3px;
+        padding: 1px;
+    }
+
+    .room-worker img{
+        width: 2vh;
+        height: 1.5vh;
+    }
+
+    .room-worker p{
+        font-size: .4rem;
+    }
+
+    .room-worker .remove-btn{
+        width: 1vh;
+        height: 1vh;
+        border-radius: 2px;
+        font-size: .4rem;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px){
+
+    #container{
+        overflow: hidden;
+        padding: 0;
+    }
+
+    #worker-list{
+        width: 30%;
+    }
+
+    #worker-list h1{
+        font-size: 1.5rem;
+    }
+
+    #worker-list button{
+        font-size: .8rem;
+        padding-block: 8px;
+    }
+
+    #worker-list .worker{
+        height: 12vh;
+    }
+
+    #worker-list .worker img{
+        width: 6vh;
+        height: 6vh;
+    }
+
+    #worker-list .worker .name{
+        font-size: .8rem;
+    }
+
+    #worker-list .worker .role{
+        font-size: .6rem;
+    }
+
+    #worker-list .worker .close{
+        top: 2px;
+        right: 2px;
+        width: 2vh;
+        height: 2vh;
+        font-size: 10px;
+        border-radius: 5px;
+    }
+
+    #worker-list .worker .edit{
+        width: 5vh;
+        height: 2vh;
+        font-size: 8px;
+        border-radius: 3px;
+    }
+
+    #plan{
+        width: 50%;
+        height: 40vh;
+        padding-block: 0;
+        transform: rotate(90deg) scaleX(1.3) scaleY(1.6);
+    }
+
+    .add-worker-btn{
+        width: 2vh;
+        height: 1.5vh;
+        font-size: 10px;
+        border-radius: 3px;
+    }
+
+    .rooms{
+        row-gap: 15px;
+        column-gap: 5px;
+    }
+
+    #add-worker-modal .modal{
+        width: 95%;
+        height: 90vh;
+    }
+
+    #add-worker-form{
+        height: 65vh;
+    }
+
+    #delete-worker-modal .modal{
+        width: 65%;
+        height: 50vh;
+    }
+
+    #edit-worker-modal .modal{
+        width: 95%;
+        height: 90vh;
+    }
+
+    #edit-worker-form{
+        height: 65vh;
+    }
+
+    #worker-profile-modal .modal{
+        width: 95%;
+        height: 90vh;
+    }
+
+    #available-workers-list .modal{
+        width: 95%;
+        height: 90vh;
+    }
+
+    #worker-profile-modal .modal .name{
+        font-size: 1.2rem;
+    }
+
+    #worker-profile-modal .modal .age-role{
+        font-size: 1rem;
+    }
+
+    .room-worker{
+        width: 7vh;
+        height: 2.5vh;
+        border-radius: 3px;
+        padding: 1px;
+    }
+
+    .room-worker img{
+        width: 2vh;
+        height: 1.5vh;
+    }
+
+    .room-worker p{
+        font-size: .4rem;
+    }
+
+    .room-worker .remove-btn{
+        width: 1vh;
+        height: 1vh;
+        border-radius: 2px;
+        font-size: .4rem;
+    }
+} */
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
+  }
+
+  @media (min-width: 375px) {
+    .sm\:container {
+      max-width: 375px;
+    }
+  }
+
+  @media (min-width: 425px) {
+    .sm\:container {
+      max-width: 425px;
+    }
   }
 
   @media (min-width: 640px) {
@@ -2940,9 +3525,512 @@ video {
   text-align: center;
 }
 
+@media (min-width: 375px) {
+  .\32xs\:h-\[40vh\] {
+    height: 40vh;
+  }
+
+  .\32xs\:py-1 {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+  }
+}
+
+@media (min-width: 425px) {
+  .xs\:h-\[50vh\] {
+    height: 50vh;
+  }
+
+  .xs\:py-2 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+}
+
 @media (min-width: 640px) {
+  .sm\:h-\[2\.5vh\] {
+    height: 2.5vh;
+  }
+
+  .sm\:h-\[3vh\] {
+    height: 3vh;
+  }
+
+  .sm\:h-\[8vh\] {
+    height: 8vh;
+  }
+
+  .sm\:h-\[90vh\] {
+    height: 90vh;
+  }
+
+  .sm\:w-8\/12 {
+    width: 66.666667%;
+  }
+
+  .sm\:w-\[2\.5vh\] {
+    width: 2.5vh;
+  }
+
+  .sm\:w-\[3vh\] {
+    width: 3vh;
+  }
+
+  .sm\:w-\[7vh\] {
+    width: 7vh;
+  }
+
+  .sm\:w-\[80\%\] {
+    width: 80%;
+  }
+
+  .sm\:rounded-\[4px\] {
+    border-radius: 4px;
+  }
+
+  .sm\:text-\[\.8rem\] {
+    font-size: .8rem;
+  }
+
   .sm\:underline {
     text-decoration-line: underline;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:h-\[12vh\] {
+    height: 12vh;
+  }
+
+  .md\:h-\[3\.5vh\] {
+    height: 3.5vh;
+  }
+
+  .md\:h-\[3vh\] {
+    height: 3vh;
+  }
+
+  .md\:h-\[9vh\] {
+    height: 9vh;
+  }
+
+  .md\:h-\[unset\] {
+    height: unset;
+  }
+
+  .md\:w-7\/12 {
+    width: 58.333333%;
+  }
+
+  .md\:w-\[12vh\] {
+    width: 12vh;
+  }
+
+  .md\:w-\[3\.5vh\] {
+    width: 3.5vh;
+  }
+
+  .md\:w-\[3vh\] {
+    width: 3vh;
+  }
+
+  .md\:w-\[\] {
+    width: ;
+  }
+
+  .md\:w-\[90\%\] {
+    width: 90%;
+  }
+
+  .md\:w-\[80\%\] {
+    width: 80%;
+  }
+
+  .md\:w-\[70\%\] {
+    width: 70%;
+  }
+
+  .md\:w-\[75\%\] {
+    width: 75%;
+  }
+
+  .md\:w-\[20\%\] {
+    width: 20%;
+  }
+
+  .md\:w-\[30\%\] {
+    width: 30%;
+  }
+
+  .md\:flex-row {
+    flex-direction: row;
+  }
+
+  .md\:items-center {
+    align-items: center;
+  }
+
+  .md\:justify-center {
+    justify-content: center;
+  }
+
+  .md\:gap-x-2 {
+    -moz-column-gap: 0.5rem;
+         column-gap: 0.5rem;
+  }
+
+  .md\:gap-y-0 {
+    row-gap: 0px;
+  }
+
+  .md\:gap-x-5 {
+    -moz-column-gap: 1.25rem;
+         column-gap: 1.25rem;
+  }
+
+  .md\:rounded-\[4px\] {
+    border-radius: 4px;
+  }
+
+  .md\:rounded-md {
+    border-radius: 0.375rem;
+  }
+
+  .md\:p-2 {
+    padding: 0.5rem;
+  }
+
+  .md\:py-2 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .md\:pe-5 {
+    padding-inline-end: 1.25rem;
+  }
+
+  .md\:text-\[\.8rem\] {
+    font-size: .8rem;
+  }
+
+  .md\:text-\[1\.2rem\] {
+    font-size: 1.2rem;
+  }
+
+  .md\:text-\[1\.5rem\] {
+    font-size: 1.5rem;
+  }
+
+  .md\:text-\[1rem\] {
+    font-size: 1rem;
+  }
+
+  .md\:text-\[2rem\] {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:h-\[9vh\] {
+    height: 9vh;
+  }
+
+  .lg\:h-\[\] {
+    height: ;
+  }
+
+  .lg\:h-\[80vh\] {
+    height: 80vh;
+  }
+
+  .lg\:h-\[50vh\] {
+    height: 50vh;
+  }
+
+  .lg\:w-\[30\%\] {
+    width: 30%;
+  }
+
+  .lg\:w-10\/12 {
+    width: 83.333333%;
+  }
+
+  .lg\:w-\[\] {
+    width: ;
+  }
+
+  .lg\:w-\[45\%\] {
+    width: 45%;
+  }
+
+  .lg\:w-\[70\%\] {
+    width: 70%;
+  }
+
+  .lg\:w-\[60\%\] {
+    width: 60%;
+  }
+
+  .lg\:flex-row {
+    flex-direction: row;
+  }
+
+  .lg\:gap-x-3 {
+    -moz-column-gap: 0.75rem;
+         column-gap: 0.75rem;
+  }
+
+  .lg\:rounded-lg {
+    border-radius: 0.5rem;
+  }
+
+  .lg\:p-1 {
+    padding: 0.25rem;
+  }
+
+  .lg\:px-2 {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .lg\:px-1 {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .xl\:bottom-1 {
+    bottom: 0.25rem;
+  }
+
+  .xl\:right-1 {
+    right: 0.25rem;
+  }
+
+  .xl\:top-1 {
+    top: 0.25rem;
+  }
+
+  .xl\:mx-0 {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  .xl\:my-10 {
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .xl\:my-20 {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+  }
+
+  .xl\:mb-5 {
+    margin-bottom: 1.25rem;
+  }
+
+  .xl\:mt-10 {
+    margin-top: 2.5rem;
+  }
+
+  .xl\:h-\[10vh\] {
+    height: 10vh;
+  }
+
+  .xl\:h-\[15vh\] {
+    height: 15vh;
+  }
+
+  .xl\:h-\[2vh\] {
+    height: 2vh;
+  }
+
+  .xl\:h-\[5\.5vh\] {
+    height: 5.5vh;
+  }
+
+  .xl\:h-\[50vh\] {
+    height: 50vh;
+  }
+
+  .xl\:h-\[5vh\] {
+    height: 5vh;
+  }
+
+  .xl\:h-\[70vh\] {
+    height: 70vh;
+  }
+
+  .xl\:h-\[8vh\] {
+    height: 8vh;
+  }
+
+  .xl\:h-\[90vh\] {
+    height: 90vh;
+  }
+
+  .xl\:h-\[9vh\] {
+    height: 9vh;
+  }
+
+  .xl\:h-\[80vh\] {
+    height: 80vh;
+  }
+
+  .xl\:h-\[85vh\] {
+    height: 85vh;
+  }
+
+  .xl\:w-1\/2 {
+    width: 50%;
+  }
+
+  .xl\:w-1\/3 {
+    width: 33.333333%;
+  }
+
+  .xl\:w-10\/12 {
+    width: 83.333333%;
+  }
+
+  .xl\:w-\[15vh\] {
+    width: 15vh;
+  }
+
+  .xl\:w-\[20\%\] {
+    width: 20%;
+  }
+
+  .xl\:w-\[25\%\] {
+    width: 25%;
+  }
+
+  .xl\:w-\[2vh\] {
+    width: 2vh;
+  }
+
+  .xl\:w-\[5vh\] {
+    width: 5vh;
+  }
+
+  .xl\:w-\[70\%\] {
+    width: 70%;
+  }
+
+  .xl\:w-\[80\%\] {
+    width: 80%;
+  }
+
+  .xl\:w-\[8vh\] {
+    width: 8vh;
+  }
+
+  .xl\:w-\[\] {
+    width: ;
+  }
+
+  .xl\:w-\[48\%\] {
+    width: 48%;
+  }
+
+  .xl\:w-\[75\%\] {
+    width: 75%;
+  }
+
+  .xl\:flex-row {
+    flex-direction: row;
+  }
+
+  .xl\:items-center {
+    align-items: center;
+  }
+
+  .xl\:justify-center {
+    justify-content: center;
+  }
+
+  .xl\:gap-10 {
+    gap: 2.5rem;
+  }
+
+  .xl\:gap-x-3 {
+    -moz-column-gap: 0.75rem;
+         column-gap: 0.75rem;
+  }
+
+  .xl\:gap-x-5 {
+    -moz-column-gap: 1.25rem;
+         column-gap: 1.25rem;
+  }
+
+  .xl\:rounded-lg {
+    border-radius: 0.5rem;
+  }
+
+  .xl\:rounded-md {
+    border-radius: 0.375rem;
+  }
+
+  .xl\:p-1 {
+    padding: 0.25rem;
+  }
+
+  .xl\:p-2 {
+    padding: 0.5rem;
+  }
+
+  .xl\:px-2 {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .xl\:px-5 {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .xl\:py-3 {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+
+  .xl\:py-4 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .xl\:pe-5 {
+    padding-inline-end: 1.25rem;
+  }
+
+  .xl\:text-\[\.8rem\] {
+    font-size: .8rem;
+  }
+
+  .xl\:text-\[0\.8rem\] {
+    font-size: 0.8rem;
+  }
+
+  .xl\:text-\[1\.2rem\] {
+    font-size: 1.2rem;
+  }
+
+  .xl\:text-\[1\.5rem\] {
+    font-size: 1.5rem;
+  }
+
+  .xl\:text-\[1rem\] {
+    font-size: 1rem;
+  }
+
+  .xl\:text-\[2rem\] {
+    font-size: 2rem;
+  }
+
+  .xl\:text-\[3rem\] {
+    font-size: 3rem;
   }
 }
 
