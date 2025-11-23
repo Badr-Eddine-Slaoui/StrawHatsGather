@@ -16,7 +16,7 @@ module.exports = {
         "mist-white": "#F5F5F5",
       },
       backgroundImage: {
-        plan: "url('../images/plan.png')",
+        plan: "url('../images/plan.webp')",
       },
       screens: {
         "2xs": "375px",
@@ -32,4 +32,3 @@ module.exports = {
   },
   plugins: [],
 };
-
